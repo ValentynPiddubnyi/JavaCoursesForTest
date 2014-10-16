@@ -7,6 +7,12 @@ import java.util.Arrays;
  */
 public class ArraysUnion {
     public int[] innerUnion(int[] firstArray, int[] secondArray){
+        if(firstArray==null || secondArray==null){
+            return new int[0];
+        }
+        if(firstArray.length==0 || secondArray.length==0){
+            return new int[0];
+        }
         Arrays.sort(firstArray);
         Arrays.sort(secondArray);
         int[] preResult = new int[(firstArray.length > secondArray.length) ? firstArray.length : secondArray.length];

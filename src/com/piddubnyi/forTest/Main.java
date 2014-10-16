@@ -12,9 +12,12 @@ public class Main {
         int[] arraySecond = {3,5,24,4,1,2,34,45,32,5};
 
         ArraysUnion arrayUnion = new ArraysUnion();
+        int[] innerUnionArray = arrayUnion.innerUnion(arrayFirst, arraySecond);
+        int[] outerUnionArray = arrayUnion.innerUnion(arrayFirst, arraySecond);
+
         System.out.println("First array: \t" + Arrays.toString(arrayFirst) + "\nSecond array: \t" + Arrays.toString(arraySecond));
-        System.out.println("Inner union: \t" + Arrays.toString(arrayUnion.innerUnion(arrayFirst, arraySecond)));
-        System.out.println("Outer union: \t" + Arrays.toString(arrayUnion.outerUnion(arrayFirst, arraySecond)));
+        System.out.println("Inner union: \t" + Arrays.toString(innerUnionArray));
+        System.out.println("Outer union: \t" + Arrays.toString(outerUnionArray));
     }
 
 
