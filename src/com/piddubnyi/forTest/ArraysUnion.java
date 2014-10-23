@@ -69,4 +69,18 @@ public class ArraysUnion {
 
         return result;
     }
+
+    public int[] leftUnion(int[] left, int[] right) {
+        int[] merged = Arrays.copyOf(left, left.length + right.length);
+        int iMerged = left.length;
+        Arrays.sort(left);
+        for(int iRight = 0; iRight < right.length; iRight++){
+            if (Arrays.binarySearch(left, right[iRight])>=0){
+                merged[iMerged++]=right[iRight];
+            }
+        }
+        merged = Arrays.copyOf(merged, iMerged);
+        return merged;
+
+    }
 }

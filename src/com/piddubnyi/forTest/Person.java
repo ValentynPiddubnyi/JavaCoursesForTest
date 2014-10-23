@@ -1,5 +1,9 @@
 package com.piddubnyi.forTest;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by fil on 10/9/14.
  */
@@ -10,12 +14,12 @@ public class Person {
     private final int age;
     private final Position position;
 
-    public Person(String firstName,String secondName, String email, int age, Position position){
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.email = email;
-        this.age = age;
-        this.position = position;
+    private Person(Builder builder){
+        this.firstName = builder.firstName;
+        this.secondName = builder.secondName;
+        this.email = builder.email;
+        this.age = builder.age;
+        this.position = builder.position;
     }
 
     public String getFirstName() {
@@ -74,5 +78,54 @@ public class Person {
         sb.append(", position=").append(position);
         sb.append('}');
         return sb.toString();
+    }
+
+    public static class Builder {
+        private String firstName;
+        private String secondName;
+        private String email;
+        private int age;
+        private Position position;
+
+        public Builder(Person original){
+            this.firstName = original.firstName;
+            this.secondName = original.secondName;
+            this.email = original.email;
+            this.age = original.age;
+            this.position = original.position;
+        }
+
+        public Builder(){
+
+        }
+
+        public Builder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public Builder secondName(String secondName) {
+            this.secondName = secondName;
+            return this;
+        }
+
+        public Builder email(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public Builder age(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public Builder position(Position position) {
+            this.position = position;
+            return this;
+        }
+
+        public Person build(){
+            return new Person(this);
+        }
     }
 }
