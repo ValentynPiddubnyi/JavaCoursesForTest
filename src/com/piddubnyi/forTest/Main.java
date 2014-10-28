@@ -32,7 +32,14 @@ public class Main {
         System.out.println(person.toString());
 
         List<Person> arrayFirst = new ArrayList<Person>();
-           arrayFirst.add(new Person.Builder().firstName("FirstName1").secondName("SecondName1").email("email1@gmail.com").age(30).position(Position.PM).build());
+           arrayFirst.add(
+                   new Person.Builder()
+                            .firstName("FirstName1")
+                            .secondName("SecondName1")
+                           .email("email1@gmail.com")
+                           .age(30)
+                           .position(Position.PM)
+                           .build());
         arrayFirst.add(new Person.Builder().firstName("FirstName2").secondName("SecondName2").email("email2@gmail.com").age(30).position(Position.PM).build());
         arrayFirst.add(new Person.Builder().firstName("FirstName3").secondName("SecondName3").email("email3@gmail.com").age(30).position(Position.PM).build());
         arrayFirst.add(new Person.Builder().firstName("FirstName4").secondName("SecondName4").email("email4@gmail.com").age(30).position(Position.PM).build());
